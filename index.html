@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NEBULA — Auto Order Account</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="nav">
+    <a class="brand" href="#"><span class="brand-mark"><i data-lucide="orbit"></i></span><span>NEBULA</span></a>
+    <nav>
+      <a href="#home">Home</a><a href="#roles">Roles</a><a href="#how">How It Works</a>
+    </nav>
+    <button class="nav-btn" onclick="document.getElementById('roles').scrollIntoView({behavior:'smooth'})"><i data-lucide="shopping-cart"></i> Order</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> AUTO ORDER SYSTEM</div>
+        <h1>POWER UP<br><em>YOUR ROLE.</em></h1>
+        <p>Order role account secara cepat, simpel, dan otomatis. Pilih role, checkout, lalu dapatkan pesananmu.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="document.getElementById('roles').scrollIntoView({behavior:'smooth'})">Lihat Role <i data-lucide="arrow-right"></i></button>
+          <button class="ghost" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})"><i data-lucide="circle-help"></i> Cara Order</button>
+        </div>
+        <div class="stats"><div><b>8</b><span>ROLE</span></div><div><b>AUTO</b><span>ORDER</span></div><div><b>24/7</b><span>SERVICE</span></div></div>
+      </div>
+      <div class="orb-wrap">
+        <div class="orb"><div class="orb-inner"><i data-lucide="orbit"></i><strong>NEBULA</strong><small>AUTO ORDER</small></div></div>
+        <div class="float-card fc1"><i data-lucide="shield-check"></i><span>Secure<br><b>Order</b></span></div>
+        <div class="float-card fc2"><i data-lucide="zap"></i><span>Fast<br><b>Delivery</b></span></div>
+      </div>
+    </section>
+
+    <section class="section" id="roles">
+      <div class="section-head"><div><div class="eyebrow"><span></span> PRICING</div><h2>Choose Your <em>Role</em></h2></div><p>Harga role Nebula yang tersedia.</p></div>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section class="how section" id="how">
+      <div class="eyebrow"><span></span> SIMPLE PROCESS</div><h2>Order dalam <em>3 langkah</em></h2>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><i data-lucide="mouse-pointer-click"></i><h3>Pilih Role</h3><p>Pilih role yang sesuai kebutuhanmu.</p></div>
+        <div class="step"><div class="num">02</div><i data-lucide="credit-card"></i><h3>Checkout</h3><p>Masukkan data order dan lanjutkan pembayaran.</p></div>
+        <div class="step"><div class="num">03</div><i data-lucide="package-check"></i><h3>Terima Order</h3><p>Pesanan diproses setelah pembayaran terverifikasi.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark"><i data-lucide="orbit"></i></span> NEBULA</div><span>Auto Order Account</span></footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <button class="close" onclick="closeModal()"><i data-lucide="x"></i></button>
+      <div class="eyebrow"><span></span> CHECKOUT</div>
+      <h2 id="modalRole">Role</h2>
+      <div class="selected"><span>Harga</span><strong id="modalPrice">Rp0</strong></div>
+      <label>Username<input id="username" placeholder="Masukkan username"></label>
+      <label>Kontak<input id="contact" placeholder="Telegram / WhatsApp"></label>
+      <button class="primary full" onclick="submitOrder()">Buat Order <i data-lucide="arrow-right"></i></button>
+      <p class="note">Demo checkout. Hubungkan payment gateway dan backend untuk auto-order production.</p>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
